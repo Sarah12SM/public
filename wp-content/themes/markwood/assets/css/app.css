@@ -1,0 +1,804 @@
+/*!
+ * Roots 6.5.0
+ */
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+body.home {
+  background: #343549;
+  background: url(../img/photo-bg.png), -webkit-linear-gradient(#343549,#343B45, #303030); /* For Safari 5.1 to 6.0 */
+  background: url(../img/photo-bg.png), -o-linear-gradient(#343549, #343B45, #303030); /* For Opera 11.1 to 12.0 */
+  background: url(../img/photo-bg.png), -moz-linear-gradient(#343549, #343B45, #303030); /* For Firefox 3.6 to 15 */
+  background: url(../img/photo-bg.png), linear-gradient(#343549, #343B45, #303030); /* Standard syntax */
+  background-repeat: no-repeat;
+  background-size: contain; 
+ }
+body {
+  background: -webkit-linear-gradient(#343549,#343B45, #303030); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#343549, #343B45, #303030); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#343549, #343B45, #303030); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#343549, #343B45, #303030); /* Standard syntax */
+ }
+h1,h2,h3,h4,h5,h6,p,a, *{
+  font-family: 'ff-enzo-web';
+}
+a{
+  color: initial;
+  cursor: pointer;
+}
+a:hover{
+  text-decoration: none;
+}
+h1{
+  color: #fff;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 28px;
+  line-height: 20px;
+}
+h2{
+  font-size: 18px;
+  font-weight: 900;
+  color: #c7c7c7;
+  text-transform: uppercase;
+}
+h3, label{
+  font-size: 12px;
+  font-weight: 900;
+  color: #fff;
+}
+h4{
+  font-size: 16px;
+  font-weight: 100;
+  color: #a3a3a3;
+  text-transform: uppercase;
+  padding: 3px;
+  background: rgba(74,74,75, .9);
+  width: 100%;
+  padding: 5px;
+}
+h5{
+  font-size: 16px;
+  font-weight: 800;
+}
+h6{
+font-size: 16px;
+font-weight: 800;
+}
+p{
+  font-size: 14px;
+  font-weight: 600;
+  color: #c7c7c7;
+}
+ul{
+  list-style: none;
+  padding-left: 0px;
+}
+
+.grey-fil{
+  background: url(../assets/img/filigree-grey.png);
+  background-size: contain;
+}
+.teal-fil{
+  background: url(../assets/img/filigree-teal.png);
+  background-size: contain;
+}
+/**
+
+************
+** Buttons **
+************
+
+**/
+.btn{
+  border-radius: 0 !important;
+  border: 0px;
+}
+.btn-join, button#register{
+  color: #fff;
+  background-color: #cfd10c;
+  padding: 15px 35px;
+  font-weight: 800;
+  font-size: 24px;
+  text-align: center;
+  transition: background .3s ease;
+  display: block;
+  border: 0px solid !important;
+}
+
+.label{
+  font-size: 16px;
+}
+.btn-join:hover, button#register:hover{
+  background: #e8ea1c;
+}
+
+.btn-primary{
+  color: #4c4c4c;
+  background-color: #20dcd1;
+  font-weight: 800;
+  transition: background .3s ease,
+    color.3s ease ;
+    padding: 5px 30px;
+}
+.btn-pimary:hover{
+  color: #fff;
+  background: #31e3d9;
+}
+.greyed-out{
+  color: #c7c7c7 !important;
+  background-color: #838383 !important;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.btn-tix{
+    padding: 5px 15px;
+  }
+/**
+
+************
+** COLORS **
+************
+
+**/
+.teal, .teal *{
+  color: #20dcd1 !important;
+}
+.teal-bg{
+  background-color: #20dcd1 !important;
+}
+.yellow, .yellow *, i.yellow {
+  color: #cfd10c !important;
+}
+.yellow-bg{
+  background-color: rgba(232, 234, 28, .3);!important;
+}
+.light-grey, .light-grey *{
+  color: #c7c7c7 !important;
+}
+.light-grey-bg{
+  background-color: rgba(199, 199, 199, .5);
+}
+.mid-grey, .mid-grey *{
+  color: #838383;
+}
+.mid-grey-bg{
+  background-color: rgba(131,131,131, .5);
+}
+.dark-grey, .dark-grey *{
+  color: #4c4c4c !important;
+}
+.dark-grey-bg{
+  background-color: rgba(76,76,76, .5) !important;
+}
+.black-bg{
+  background: rgba(0,0,0, .7);
+}
+.white, .white *{
+  color: #fff !important;
+}
+.white-bg{
+  background-color: rgba(255,255,255, 1);
+}
+.black, .black p, .black *{
+  color: #000 !important;
+}
+.dark-blue-bg{
+  background-color: #2A2D3C;
+  padding: 3px;
+}
+.ex-dark-bg{
+  background-color: #424244 !important;
+}
+/* ==========================================================================
+   12SM Efficiency Classes
+   ========================================================================== */
+
+.col{
+   max-width: 1170px;
+   margin: 0 auto;
+}
+.bold{
+  font-weight: bold;
+}
+.left {
+   float: left;
+}
+.right {
+   float: right;
+}
+.img-width {
+   width: 100%;
+   height: auto;
+}
+.img-height{
+   width: auto !important;
+   height: 100%;
+}
+.width-full{
+  width: 100%;
+}
+.pad-5{
+  padding: 5px;
+}
+.pad-15{
+   padding: 15px;
+}
+.pad-30{
+   padding: 30px;
+}
+
+.pad-15-v {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.pad-15-h {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.pad-30-v {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.pad-30-h {
+   padding-left: 30px;
+  padding-right: 30px;
+}
+.marg-15 {
+   margin: 15px;
+}
+.marg-30 {
+   margin: 30px;
+}
+.marg-5-v{
+  margin: 5px 0;
+}
+.marg-15-v {
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+}
+.marg-5-h{
+  margin: 0 5px;
+}
+.marg-15-h {
+   margin: 0 15px;
+}
+.marg-30-v {
+  margin-bottom: 30px;
+   margin-top: 30px;
+}
+.marg-30-h {
+   margin: 0 30px;
+}
+.no-pad{
+  padding: 0 !important;
+}
+.no-marg{
+  margin: 0 !important;
+}
+.no-pad-v{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.no-marg-v{
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.no-marg-top{
+  margin-top: 0 !important;
+}
+.no-marg-bottom{
+  margin-bottom: 0 !important;
+}
+.center{
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+.text-center{
+  text-align: center;
+}
+.img-lq-pad-100{
+  padding-bottom: 100%;
+}
+.membership-options .pad-30{
+  padding: 10px !important;
+}
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.banner, .content-info { 
+  background: rgba(0,0,0,.5);
+}
+nav.collapse.navbar-collapse {
+  margin-top: 25px;
+  float: right;
+}
+.nav li a, #menu-primary-navigation-1 li a{
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  opacity:  .4;
+  transition: opacity .3s ease;
+}
+.nav li a.sign-up, #menu-primary-navigation-1 li a.sign-up{
+  color: #cfd10c;
+
+  opacity: 1
+}
+.nav li a:hover, #menu-primary-navigation-1 li a:hover{
+  opacity: 1;
+}
+.caret{
+  color: #333548;
+}
+a.navbar-brand {
+  padding: 3px 15px;
+}
+.navbar-brand img {
+  max-width: 57%;
+}
+.single-live article header, .single-post article header  {
+  display: none;
+}
+.nav>li>a {
+  padding: 10px 6px;
+}
+/* ==========================================================================
+   Home
+   ========================================================================== */
+.content, .banner > div.container-fluid {
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.lock-ico{
+  margin-top: -10px;
+  font-size: 18px;
+}
+.blog-thumb{
+   padding-bottom: 66%;
+}
+/*borders for blog section */
+.home-blog:first-child>*>*>*, .home-blog:nth-child(1)>*>*>*{
+  border-top: 5px solid rgba(199, 199, 199, .3);
+  padding-bottom: 20px;
+}
+.home-border{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 5px solid rgba(199, 199, 199, .3);
+
+}
+.home-vid{
+  border: 10px #838383 solid;
+  color: #fff;
+}
+.lessons-home{
+  margin: 25px 0px;
+}
+.home-products h1{
+  font-size: 18px;
+}
+.home-products h2{
+  font-size: 14px;
+}
+.left.img-lq.lesson-instructor.marg-15-h {
+  margin-left: 0px!important;
+}
+/* ==========================================================================
+   Blog
+   ========================================================================== */
+.blog-border-bottom{
+  border-bottom: 5px #c7c7c7 solid;
+}
+
+
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+.content { }
+
+/* ==========================================================================
+   Memberships
+   ========================================================================== */
+
+.ms-membership-form-wrapper{
+  background-color: rgba(131,131,131, .5);
+  color: #fff;
+  padding: 15px 15px 30px 15px;
+}
+.ms-membership-form-wrapper input{
+  color: #000 !important;
+}
+/* ==========================================================================
+   Primary Content
+   ========================================================================== */
+
+.main {
+  padding-bottom: 50px;
+}
+
+/* Gallery Shortcode */
+.gallery-row { padding: 15px 0; }
+
+
+
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+
+.sidebar { }
+
+.side-bar-join{
+  background: url(../img/sidebar-email-bg.png);
+  background-size: cover;
+}
+.popular-posts {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: rgba(76,76,76, .5) !important;
+  color: #838383;
+  border: #000 solid 1px;
+}
+.popular-posts *{
+  color: #838383;
+}
+.widget-inner h3:first-child{
+  margin-top: 0px;
+}
+/* ==========================================================================
+   Posts
+   ========================================================================== */
+
+.hentry header { }
+.hentry time { }
+.hentry .byline { }
+.hentry .entry-content { }
+.hentry footer { }
+
+/* ==========================================================================
+   About
+   ========================================================================== */
+.hexagon-img{
+  padding-bottom: 100%;
+}
+.hexagon {
+   overflow: hidden;
+   visibility: hidden;
+   -webkit-transform: rotate(120deg);
+       -moz-transform: rotate(120deg);
+        -ms-transform: rotate(120deg);
+         -o-transform: rotate(120deg);
+            transform: rotate(120deg);
+   cursor: pointer;
+   }
+.hexagon1 {
+  width: 200px;
+  height: 100px;
+  margin: 0 0 0 -45px;
+}
+
+.hexagon-in2 {
+width: 100%;
+height: 100%;
+background-repeat: no-repeat;
+background-position: 50%;
+background-image: url(http://placekitten.com/240/240);
+visibility: visible;
+-webkit-transform: rotate(-60deg);
+   -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+     -o-transform: rotate(-60deg);
+        transform: rotate(-60deg);
+}
+.hexagon-in1 {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotate(-60deg);
+   -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+     -o-transform: rotate(-60deg);
+        transform: rotate(-60deg);
+}
+.hexagon-in2 {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  visibility: visible;
+  -webkit-transform: rotate(-60deg);
+   -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+     -o-transform: rotate(-60deg);
+        transform: rotate(-60deg);
+}
+.blog-thumb.featured{
+  max-height: 377px;
+}
+button.close {
+  padding: 15px 20px;
+}
+ul.socials {
+  list-style: none;
+  padding-left: 0px;
+  text-align: center;
+}
+.socials li {
+  display: inline-block;
+  font-size: 22px;
+  padding: 0px 5px;
+}
+.modal-content {
+  border-radius: 0;
+}
+.collapsed .fa-angle-up:before {
+content: "\f107" !important;
+}
+.instructor-row h1{
+  margin-top: 20px;;
+}
+/* ==========================================================================
+   Lessons
+   ========================================================================== */
+
+.lesson-thumb {
+  padding-bottom: 56%;
+}
+.instructor-thumb-sm{
+  padding-bottom: 75px;
+  width: 75px;
+}
+.instructor-thumb-md{
+  padding-bottom: 100%;
+  width: 100%;
+}
+.instructor {
+  font-weight: 600;
+}
+.lesson-instructor {
+  max-width: 75px;
+  padding-bottom: 75px;
+  width: 100%;
+}
+.thumb-container{
+   width: 100%;
+   padding-bottom: 56%;
+}
+.lesson-card {
+  position: relative;
+}
+.lesson-card-bottom {
+width: 100%;
+padding: 10px 5px 0px 5px;
+background: rgba(0,0,0, .7);
+}
+select.js-wpv-filter-trigger, input.js-wpv-filter-trigger-delayed, option {
+  background: #2A2D3C !important;
+  border: 0px solid !important;
+  color: #fff;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  margin-top: 4px;
+}
+select.js-wpv-filter-trigger option{
+  width: 100%;
+}
+select.js-wpv-filter-trigger option:hover{
+background: #262835 !important;
+}
+.filter-by{
+  width: 100%;
+}
+.search, .skill-filter, .ins-filter{
+  float: left;
+  width: 100% !important;
+}
+select.js-wpv-filter-trigger {
+  width: inherit;
+}
+.lesson-card-bottom h2{
+  font-size: 15px;
+}
+.lesson-meta{
+  margin-top: 15px;
+}
+.lesson-container{
+    margin-bottom: 15px;
+  }
+/* ==========================================================================
+   Contact
+   ========================================================================== */
+
+.frm_form_fields input, .frm_form_fields textarea {
+border-radius: 0px;
+background: rgba(0,0,0, .5);
+border: 0px;
+border-width: 0px;
+box-shadow: 0px 0px 0px;
+}
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.content-info {
+  color: #fff;
+ }
+
+#social ul {margin:0px; padding:0px; list-style: none;}
+#social li {margin:0px; padding: 0px list-style:none; display: block; float:left;}
+#social li a {padding: 10px; opacity: .4; transition: opacity .3s ease;}
+#social li a:hover{
+  opacity: 1;
+}
+#menu-primary-navigation-1 li{
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+#menu-primary-navigation-1{
+  list-style: none;
+  padding-left: 0px;
+  float: left;
+}
+#menu-primary-navigation-1 li:first-child, #social li:first-child a{
+  padding-left: 0px;
+}
+.content-info .nav li a {
+  padding: 0 10px;
+}
+#menu-socials{
+  font-size: 24px;
+}
+
+/* ==========================================================================
+   WordPress Generated Classes
+   See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+   ========================================================================== */
+
+.aligncenter { display: block; margin: 0 auto; }
+.alignleft { float: left; }
+.alignright { float: right; }
+figure.alignnone { margin-left: 0; margin-right: 0; }
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* Extra small devices (phones, up to 480px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .white-bg{
+    background-color: rgba(255,255,255, .5);
+  }
+  .lesson-container{
+    padding: 30px;
+    margin-bottom: initial;
+  }
+  .lesson-meta{
+    margin-top: 0px;
+  }
+  .lesson-card-bottom h2{
+    font-size: 18px;
+  }
+  .lesson-card {
+    height: 245px;
+    position: relative;
+  }
+  select.js-wpv-filter-trigger {
+    width: initial;
+  }
+  .search, .skill-filter, .ins-filter{
+    float: right;
+    width: initial!important;
+  }
+  .filter-by{
+    width: initial !important;
+  }
+  .left.img-lq.lesson-instructor.marg-15-h {
+    margin-left: 15px!important;
+  }
+  .home-products h1{
+    font-size: 28px;
+  }
+  .home-products h2{
+    font-size: 18px;
+  }
+  .hexagon1 {
+    width: 400px;
+    height: 200px;
+    margin: 0 0 0 -80px;
+  }
+  .instructor-row h1{
+    margin-top: 0px;
+  }
+  .membership-options .pad-30{
+  padding: 30px;
+  }
+  .lessons-home{
+  margin: 0px 0px;
+  }
+  .height-20{
+    min-height: 20px;
+  }
+  .btn-tix{
+    padding: 5px 30px;
+  }
+  a.navbar-brand {
+    padding: 15px 15px;
+  }
+  .navbar-brand img {
+    max-width: 100%;
+  }
+  .home-border{
+    height: 149px;
+  }
+  .home-blog:first-child>*>*>*,.home-blog:nth-child(2)>*>*>*{
+    border-top: 5px solid rgba(199, 199, 199, .3);
+  }
+  #menu-primary-navigation-1 li{
+    display: inline-block;
+    padding: 0 10px;
+  }
+  .btn-join{
+    color: #fff;
+    background-color: #cfd10c;
+    padding: 15px 35px;
+    font-weight: 800;
+    font-size: 24px;
+    text-align: center;
+    max-width: 225px;
+    transition: background .3s ease;
+  }
+  header.banner { 
+    height: 100px;
+  }
+  nav.collapse.navbar-collapse {
+    margin-top: 25px;
+    float: right;
+  }
+  .modal-dialog{
+    width: 75% !important;
+    max-width: 1024px !important;
+  }
+  .instructor-thumb-md{
+  padding-bottom: 125px;
+  width: 125px;
+}
+  .navbar-header{
+    width: 10%;
+    margin-top: 
+  }
+  .nav>li>a {
+      font-size: 15px;
+  }
+  a.navbar-brand{
+    padding: 15px 5px;
+  }
+ }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .navbar-header{
+    width: 15%;
+  }
+ }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .nav>li>a {
+      padding: 10px 15px;
+  }
+}  

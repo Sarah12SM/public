@@ -1,0 +1,780 @@
+<!-- HOME | VIDEO GALLERY <!-->
+[wpv-layout-start]
+  [wpv-items-found]
+  <!-- wpv-loop-start -->
+    <wpv-loop>
+      <div class="col-sm-4 lessons-home">
+        <div class="pad-15 dark-grey-bg">
+          <a href="[wpv-post-url]">
+            <div class="img-lq thumb-container">
+              [wpv-if thumb='wpcf-thumbnail-options' evaluate='$thumb = 1']
+                [wpv-post-featured-image attr='class=img-responsive' size='medium']
+              [/wpv-if]
+              [wpv-if thumb='wpcf-thumbnail-options' evaluate='$thumb = 2']
+                [types field='custom-video-thumbnail' size='medium' align='none' resize='proportional' class='img-responsive'][/types]
+              [/wpv-if]
+            </div>
+          </a>
+          <div class="lesson-meta">
+            <div class="left img-lq lesson-instructor marg-15">
+              [wpv-post-featured-image id='$instructors' size='thumbnail']
+            </div>
+            <a href="[wpv-post-url]">
+              <h6 class="teal">
+                [wpv-post-title]
+              </h6>
+            </a>
+            <p>
+              <strong>
+                Instructor: [wpv-post-title id="$instructors"]
+              </strong>
+            </p>
+            <p>
+              [wpv-post-taxonomy type="skill-level" separator=", " format="link" show="name" order="asc"]
+            </p>
+          </div>
+        </div>
+      </div>
+    </wpv-loop>
+  <!-- wpv-loop-end -->
+  [/wpv-items-found]
+  [wpv-no-items-found]
+    [wpml-string context="wpv-views"]<strong>No items found</strong>[/wpml-string]
+  [/wpv-no-items-found]
+[wpv-layout-end]
+
+
+
+<!-- HOME | BLOG <!-->
+[wpv-layout-start]
+  [wpv-items-found]
+  <!-- wpv-loop-start -->
+    <wpv-loop>
+      <div class="col-sm-6 home-blog">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="img-lq blog-thumb">
+              [wpv-post-featured-image size='thumbnail']
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <h2 class="no-marg-top">[wpv-post-title]</h2>
+            <p><span class="date">[wpv-post-date]</span> // by [wpv-post-author]</p>
+            <p>[wpv-post-excerpt]</p>
+          </div>
+        </div>
+      </div>
+    </wpv-loop>
+  <!-- wpv-loop-end -->
+  [/wpv-items-found]
+  [wpv-no-items-found]
+    [wpml-string context="wpv-views"]<strong>No items found</strong>[/wpml-string]
+  [/wpv-no-items-found]
+[wpv-layout-end]
+
+<!-- ABOUT INSTRUCTORS <!-->
+[wpv-layout-start]
+  [wpv-items-found]
+  <!-- wpv-loop-start -->
+    <wpv-loop wrap='2'>
+    [wpv-item index=1]
+      <div class="row instructor-row marg-15-v">
+        <div class="col-sm-5">
+          <div class='hexagon hexagon1'>
+            <div class='hexagon-in1'>
+              <div class='hexagon-in2 img-lq'>
+                [wpv-post-featured-image]
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-7">
+          <h1>[wpv-post-title]</h1>
+          <h2>[types field="title" output="raw"][/types]</h2>
+          <p>[types field="short-bio"][/types]</p>
+          <a data-toggle="modal" data-target="#[wpv-post-id]" class="teal bold modal-link">
+            Full Bio
+          </a>
+        </div>
+      </div>
+
+
+      [wpv-item index=2]
+      <div class="row instructor-row marg-15-v">
+        <div class="col-sm-5 col-sm-push-7">
+          <div class='hexagon hexagon1'>
+            <div class='hexagon-in1'>
+              <div class='hexagon-in2 img-lq'>
+                [wpv-post-featured-image]
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-7 col-sm-pull-5">
+          <h1>[wpv-post-title]</h1>
+          <h2>[types field="title" output="raw"][/types]</h2>
+          <p>[types field="short-bio"][/types]</p>
+          <a data-toggle="modal" data-target="#[wpv-post-id]" class="teal bold modal-link">
+            Full Bio
+          </a>
+        </div>
+      </div>
+    </wpv-loop>
+  <!-- wpv-loop-end -->
+  [/wpv-items-found]
+  [wpv-no-items-found]
+    [wpml-string context="wpv-views"]<strong>No items found</strong>[/wpml-string]
+  [/wpv-no-items-found]
+[wpv-layout-end]
+
+<!-- ABOUT | INSTRUCTOR MODAL <!-->
+[wpv-layout-start]
+  [wpv-items-found]
+<wpv-loop>
+<div class="modal fade" id="[wpv-post-id]">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-8">
+            <h2 class="modal-title">[wpv-post-title]</h2>
+            <h2>[types field="title"][/types]</h2>
+            [types field="bio"][/types]
+          </div>
+          <div class="col-sm-4">
+            <div class='marg-15-v'>
+              [wpv-post-featured-image attr="class='img-responsive'"]
+            </div>
+            <div class='marg-15-v'>
+              <ul class='socials'>
+                <li class="facebook">
+                  <a href="[types field="facebook-url" output="raw"][/types]" target="_blank">
+                    <i class='fa fa-facebook'></i>
+                  </a>
+                </li>
+                <li class="twitters">
+                  <a href="[types field="twitter-url" output="raw"][/types]" target="_blank">
+                    <i class='fa fa-twitter'></i>
+                  </a>
+                </li>
+                <li class="youtube">
+                  <a href="[types field="youtube-url" output="raw"][/types]" target="_blank">
+                    <i class='fa fa-youtube'></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class='marg-v-15'>
+              [types field="websites" target="_blank" separator=", "][/types]
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+  </wpv-loop>
+[/wpv-items-found]
+  [wpv-no-items-found]
+    [wpml-string context="wpv-views"]<strong>No items found</strong>[/wpml-string]
+  [/wpv-no-items-found]
+[wpv-layout-end]
+
+<!-- BLOG ARCHIVE <!-->
+[wpv-layout-start]
+  [wpv-items-found]
+  <!-- wpv-loop-start -->
+    <wpv-loop>
+          <div class='row pad-v-30'>
+            <div class='col-sm-3'>
+            <a href="[wpv-post-url]">
+              <div class='img-lq blog-thumb'>
+                [wpv-post-featured-image size='medium']
+              </div>
+            </a>
+            </div>
+            <div class='col-sm-9'>
+              <a href="[wpv-post-url]">
+                <h3>[wpv-post-title]</h3>
+              </a>
+              <p>
+                <span class='date'>
+                  [wpv-post-date]
+                </span>
+              </p>
+              <p>
+                [wpv-post-excerpt]
+              </p>
+            </div>
+          </div>
+    </wpv-loop>
+  <!-- wpv-loop-end -->
+  [/wpv-items-found]
+  [wpv-no-items-found]
+    [wpml-string context="wpv-views"]<strong>No items found</strong>[/wpml-string]
+  [/wpv-no-items-found]
+[wpv-layout-end]
+
+<!-- FEATURED BLOG POST <!-->
+[wpv-layout-start]
+  [wpv-items-found]
+  <!-- wpv-loop-start -->
+    <wpv-loop>
+          <div class="row">
+            <div class='col-sm-12'>
+              <a href="[wpv-post-url]">
+                <div class="img-lq">
+                [wpv-post-feature-image size='large']
+              </a>
+            </div>
+          </div>
+          <div class='row marg-v-30'>
+            <div class='col-sm-12'>
+              <div class='addthis sharing-box'>
+              </div>
+              <a href="[wpv-post-url]">
+                <h1>[wpv-post-title]</h1>
+              </a>
+              <p>
+                <span class='date'>
+                  [wpv-post-date]
+                </span>
+              </p>
+              <p>
+                [wpv-post-excerpt]
+              </p>
+            </div>
+          </div>
+    </wpv-loop>
+  <!-- wpv-loop-end -->
+  [/wpv-items-found]
+  [wpv-no-items-found]
+    [wpml-string context="wpv-views"]<strong>No items found</strong>[/wpml-string]
+  [/wpv-no-items-found]
+[wpv-layout-end]
+
+<!-- Lessons Archive <!-->
+[wpv-layout-start]
+  [wpv-items-found]
+  <!-- wpv-loop-start -->
+  <div class="row">
+    <wpv-loop>
+      <div class="col-sm-6 marg-15-v">
+        <div class="dark-grey-bg pad-15 lesson-card">
+          <div class="row">
+            <div class="col-sm-5">
+              <div class="img-lq lesson-thumb ">
+                [wpv-if thumb='wpcf-thumbnail-options' evaluate="$thumb = 1"]
+              [wpv-post-featured-image attr='class=img-responsive' size='thumbnail']
+            [/wpv-if]
+            [wpv-if thumb='wpcf-thumbnail-options' evaluate="$thumb = 2"]
+              [types field="custom-video-thumbnail" size="thumbnail" align="none" resize="proportional" class="img-responsive"][/types]
+            [/wpv-if]
+              </div>
+            </div>
+            <div class="col-sm-7">
+              <div class="row">
+                <div class="col-sm-12 lesson-meta">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="img-lq left instructor-thumb-sm marg-5-h">
+                         [wpv-post-featured-image id='$instructors']
+                      </div>
+                        <h2 class="teal no-marg-top">
+                          [wpv-post-title]
+                        </h2>
+                        <p>
+                          <span class='instructor white'> 
+                            Instructor: [wpv-post-title id='$instructors']
+                          </span>
+                        </p>
+                        <p>
+                          <span class='level'>
+                            [wpv-post-taxonomy type="skill-level" separator=", " format="link" show="name" order="asc"]
+                          </span>
+                        </p>
+                        <br />
+                        [wpv-post-excerpt more='' length='100']
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lesson-card-bottom black-bg">
+          <div class="row">
+            <div class="col-sm-12">
+                <div class="left">
+                  <h2 class='no-marg-top right dark-grey'>[fav-link return='1']</h2>
+                </div>
+                <div class="right">
+                  <a href="[wpv-post-url]">
+                    <h2 class="teal no-marg-top">
+                      Watch
+                      <i class='fa fa-angle-double-right'></i>
+                    </h2>
+                  </a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </wpv-loop>
+  </div>
+  <!-- wpv-loop-end -->
+  [/wpv-items-found]
+  [wpv-no-items-found]
+    [wpml-string context="wpv-views"]<strong>No items found</strong>[/wpml-string]
+  [/wpv-no-items-found]
+[wpv-layout-end]
+
+<!-- LESSON SINGLE <!-->
+<h3>BREADCRUMBS</h3>
+<div class='row'>
+  <div class="col-sm-12">
+    <div class="pad-30">
+      <div class="content"> 
+        [wpv-if evaluate="has_term('basic', 'skill-level', null) = '1'"]
+          [ms-protect-content id="85"]
+        [/wpv-if]
+        [wpv-if evaluate="has_term('headliner-package', 'skill-level', null) = '1'"]
+          [ms-protect-content id="137"]
+        [/wpv-if]
+        [wpv-if evaluate="has_term('opening-act', 'skill-level', null) = '1'"]
+          [ms-protect-content id="136"]
+        [/wpv-if]
+          [types field="video-url"][/types]
+        [/ms-protect-content]
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row marg-15-v light-grey-bg pad-15">
+  <div class="col-sm-1 hidden-xs">
+    <div class="marg-15-v">
+      <div class="img-lq instructor-thumb-sm">
+        [wpv-post-featured-image id="$instructors" size='thumbnail']
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-5 marg-30-v">
+    <h1 class="teal no-marg">
+      [wpv-post-title]
+    </h1>
+  </div>
+  <div class="col-sm-3 marg-30-v">
+    <p class='white'>Instructor: [wpv-post-title id="$instructors"]</p>
+    <p class="mid-grey">[wpv-post-taxonomy type="skill-level" separator=", " format="link" show="name" order="asc"]</p>
+  </div>
+  <div class="col-sm-3 marg-30-v">
+    <a href="" class="btn-primary btn btn-curriculum pad-15">
+      <i class='fa fa-star left'>
+      </i>
+      <h3 class='right no-marg'>
+        Save to Curriculum
+      </h3>
+    </a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-8">
+    <div class="white-bg pad-15">
+      <span class='black'>
+        [wpv-post-body view_template="None"]
+      </span>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="dark-grey-bg pad-15">
+      <h2 class='white'>Additional Assets</h2>
+    </div>
+    <div class="light-grey-bg">
+      [ms-protect-content id="84"]
+        [wpv-view name="LESSON | ASSETS" wpvprchildof="[wpv-post-id"]
+      [/ms-protect-content]
+    </div>
+  </div>
+</div>
+
+<!-- EVENTS <!-->
+[wpv-layout-start]
+
+  [wpv-items-found]
+
+  <!-- wpv-loop-start -->
+    <wpv-loop>
+          <a href="[wpv-post-url]" class="tour-date">
+          <div class="row">
+            <div class="col-sm-3 col-xs-4">
+              <span class="hidden-sm hidden-md hidden-lg label label-default">Date:</span>
+              [types field="event-start-date" style="text" format="m/d/Y"][/types]
+            </div>
+            <div class="col-sm-7">
+              <h1>[wpv-post-title]</h1>
+              <h3>at [types field="event-venue" output="raw"][/types], [types field="event-venue-city" output="raw"][/types] · [types field="event-venue-state" output="raw"][/types]
+              </h3>
+            </div>
+            <div class="col-sm-2 col-xs-12">
+              <button class="btn btn-primary black">More Info</button>
+            </div>
+          </div>
+          </a>
+    </wpv-loop>
+  <!-- wpv-loop-end -->
+
+  [/wpv-items-found]
+  [wpv-no-items-found]
+    [wpml-string context="wpv-views"]<center><h2>No current live events.</h2><p>Sign up below to be notified of new events!</p></center>[/wpml-string]
+  [/wpv-no-items-found]     
+[wpv-layout-end]
+
+
+<!-- Membership Main <!-->
+[wpv-layout-start]
+  [wpv-items-found]
+  <!-- wpv-loop-start -->
+    <wpv-loop>
+      [wpv-item index=1]
+        <div class="col-sm-4 pos-bottom">
+          <h1 class='text-center membership-title'>
+            [wpv-post-title]
+          </h1>
+          <div class="light-grey-bg  pad-15">
+            <div class="row">
+              <div class="col-sm-12 col-xs-6">
+                <h1 class="white text-center">
+                  $[types field="yearly-pricing" format="FIELD_VALUE"][/types] / year
+                </h1>
+                <h2 class="white text-center">
+                  or $[types field="montly-pricing" format="FIELD_VALUE"][/types]/ month
+                </h2>
+                <p class='white height-20 text-center bold marg-v-5'>
+                  [types field="comment"][/types]
+                </p>
+              </div>
+              <div class="col-sm-12 col-xs-6">
+                <span class="btn-join hidden-xs dark-grey-bg marg-15-v white center">
+                    [ms-membership-buy id='[types field="membership-id" output="raw"][/types]' label="JOIN"]
+                </span>
+                <br />
+                <p class='white'>
+                  <i class='fa fa-chevron-circle-right'></i> [types field="bullet-points" separator="</br> <i class='fa fa-chevron-circle-right'></i> "][/types]
+                </p>
+              </div>
+            </div>
+          </div>
+          <span class="btn-join hidden-sm hidden-md hidden-lg dark-grey-bg no-marg-top marg-15-v white center">
+                [ms-membership-buy id='[types field="membership-id" output="raw"][/types]' label="JOIN"]
+          </span>
+        </div>
+      [wpv-item index=2]
+      <div class="col-sm-4 pos-bottom">
+        <h1 class='text-center membership-title title-teal'>
+            [wpv-post-title]
+          </h1>
+          <div class="teal-bg pad-15">
+            <h1 class="white text-center">
+              $[types field="yearly-pricing" format="FIELD_VALUE"][/types] / year
+            </h1>
+            <h2 class="white text-center">
+              or $[types field="montly-pricing" format="FIELD_VALUE"][/types]/ month
+            </h2>
+            <p class='white height-20 text-center bold marg-v-5'>
+              [types field="comment"][/types]
+            </p>
+            <span class="btn-join hidden-xs marg-15-v white center">
+                    [ms-membership-buy id='[types field="membership-id" output="raw"][/types]' label="JOIN"]
+                </span>
+            <br />
+            <p class='white'>
+              <i class='fa fa-chevron-circle-right'></i> [types field="bullet-points" separator="</br> <i class='fa fa-chevron-circle-right'></i> "][/types]
+            </p>
+          </div>
+          <span class="btn-join hidden-sm hidden-md hidden-lg  no-marg-top marg-15-v white center">
+            [ms-membership-buy id='[types field="membership-id" output="raw"][/types]' label="JOIN"]
+          </span>
+        </div>
+      [wpv-item index=3]
+      <div class="col-sm-4 pos-bottom">
+        <h1 class='text-center membership-title'>
+            [wpv-post-title]
+          </h1>
+          <div class="light-grey-bg pad-15">
+            <h1 class="white text-center">
+              $[types field="yearly-pricing" format="FIELD_VALUE"][/types] / year
+            </h1>
+            <h2 class="white text-center">
+              or $[types field="montly-pricing" format="FIELD_VALUE"][/types]/ month
+            </h2>
+            <p class='white height-20 text-center bold marg-v-5'>
+              [types field="comment"][/types]
+            </p>
+            <span class="btn-join dark-grey-bg marg-15-v white center">
+                [ms-membership-buy id='[types field="membership-id" output="raw"][/types]' label="JOIN"]
+            </span>
+            <br />
+            <p class='white'>
+              <i class='fa fa-chevron-circle-right'></i> [types field="bullet-points" separator="</br> <i class='fa fa-chevron-circle-right'></i> "][/types]
+            </p>
+          </div>
+        </div>
+    </wpv-loop>
+  <!-- wpv-loop-end -->
+  [/wpv-items-found]
+  [wpv-no-items-found]
+    [wpml-string context="wpv-views"]<strong>No items found</strong>[/wpml-string]
+  [/wpv-no-items-found]
+[wpv-layout-end]
+
+<!-- LESSONS SINGULAR -->
+<h3>BREADCRUMBS</h3>
+<div class='row'>
+  <div class="col-sm-12">
+    <div class="pad-30">
+      <div class="content">
+        [wpv-if evaluate="has_term('basic', 'skill-level', null) = '1'"]
+          [ms-protect-content id="85"]
+            [types field="video-url"][/types]
+              <span class='hide'>
+          [/ms-protect-content]
+          [ms-protect-content id="137 85"]
+            [types field="video-url"][/types]
+            <span class='hide'>
+          [/ms-protect-content]
+          [ms-protect-content id="136"]
+            [types field="video-url"][/types]
+            <span class='hide'>
+          [/ms-protect-content]
+        [/wpv-if]
+        [wpv-if evaluate="has_term('headliner-package', 'skill-level', null) = '1'"]
+          [ms-protect-content id="137 85"]
+          [types field="video-url"][/types]
+          <span class='hide'>
+          [/ms-protect-content]
+          [ms-protect-content id="136"]
+            [types field="video-url"][/types]
+            <span class='hide'>
+          [/ms-protect-content]
+        [/wpv-if]
+        [wpv-if evaluate="has_term('opening-act', 'skill-level', null) = '1'"]
+            [ms-protect-content id="136"]
+            [types field="video-url"][/types]
+            <span class='hide'>
+          [/ms-protect-content]
+        [/wpv-if]
+        <div class="greyed-out img-lq thumb-container">
+          [wpv-if thumb='wpcf-thumbnail-options' evaluate="$thumb = 1"]
+            [wpv-post-featured-image attr='class=img-responsive' size='thumbnail']
+          [/wpv-if]
+          [wpv-if thumb='wpcf-thumbnail-options' evaluate="$thumb = 2"]
+            [types field="custom-video-thumbnail" size="thumbnail" align="none" resize="proportional" class="img-responsive"][/types]
+          [/wpv-if]
+        </div>
+        <h2>
+          We're sorry this content is not available to your membership level
+        </h2>
+        <h3>
+          You can upgrade your membership <a href='/store'>here</a> 
+        </h3>
+          </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row marg-15-v light-grey-bg pad-15">
+  <div class="col-sm-1 hidden-xs">
+    <div class="marg-15-v">
+      <div class="img-lq instructor-thumb-sm">
+        [wpv-post-featured-image id="$instructors" size='thumbnail']
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-5 marg-30-v">
+    <h1 class="teal no-marg">
+      [wpv-post-title]
+    </h1>
+  </div>
+  <div class="col-sm-3 marg-30-v">
+    <p class='white'>Instructor: [wpv-post-title id="$instructors"]</p>
+    <p class="mid-grey">[wpv-post-taxonomy type="skill-level" separator=", " format="link" show="name" order="asc"]</p>
+  </div>
+  <div class="col-sm-3 marg-30-v">
+    <span class="btn-primary btn btn-curriculum pad-15">
+      [fav-link return='1']
+    </span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-8">
+    <div class="white-bg pad-15">
+      <span class='black'>
+        [wpv-post-body view_template="None"]
+      </span>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="dark-grey-bg pad-15">
+      <h2 class='white'>Additional Assets</h2>
+    </div>
+    <div class="light-grey-bg">
+      wpv-if evaluate="has_term('basic', 'skill-level', null) = '1'"]
+          [ms-protect-content id="85"]
+            [wpv-view name="LESSON | ASSETS" wpvprchildof="[wpv-post-id"]
+            <span class='hide'>
+          [/ms-protect-content]
+          [ms-protect-content id="137 85"]
+            [wpv-view name="LESSON | ASSETS" wpvprchildof="[wpv-post-id"]
+            <span class='hide'>
+          [/ms-protect-content]
+          [ms-protect-content id="136"]
+            [wpv-view name="LESSON | ASSETS" wpvprchildof="[wpv-post-id"]
+            <span class='hide'>
+          [/ms-protect-content]
+        [/wpv-if]
+        [wpv-if evaluate="has_term('headliner-package', 'skill-level', null) = '1'"]
+          [ms-protect-content id="137 85"]
+            [wpv-view name="LESSON | ASSETS" wpvprchildof="[wpv-post-id"]
+            <span class='hide'>
+          [/ms-protect-content]
+          [ms-protect-content id="136"]
+            [wpv-view name="LESSON | ASSETS" wpvprchildof="[wpv-post-id"]
+            <span class='hide'>
+          [/ms-protect-content]
+        [/wpv-if]
+        [wpv-if evaluate="has_term('opening-act', 'skill-level', null) = '1'"]
+            [ms-protect-content id="136"]
+            [wpv-view name="LESSON | ASSETS" wpvprchildof="[wpv-post-id"]
+            <span class='hide'>
+          [/ms-protect-content]
+        [/wpv-if]
+        <h2>
+          We're sorry this content is not available to your membership level
+        </h2>
+        <h3>
+          You can upgrade your membership <a href='/store'>here</a> 
+        </h3>
+          </span>
+    </div>
+  </div>
+</div>
+
+
+
+<!--Views Filter Controls <!-->
+[wpv-filter-start hide="false"]
+[wpv-filter-controls]
+<div class='row'>
+  <div class='col-sm-3'>
+    <h3 class='left marg-5-v'>Filter by:  </h3>
+    <div class="dark-blue-bg pad-5 right">
+      [wpml-string context="wpv-views"]<h3 class='left marg-5-v'>Skill Levels:</h3>[/wpml-string] 
+    [wpv-control taxonomy="skill-level" url_param="wpv-skill-level" type="select" default_label="Level"]
+  </div>
+  </div>
+  <div class='col-sm-3'>
+    <div class="dark-blue-bg pad-5">
+      [wpv-control-set url_param="wpv-pr-child-of" ancestors="instructors"]
+          [wpv-control-item type="select" ancestor_type="instructors" default_label=""]
+      [/wpv-control-set]
+    </div>
+  </div>
+  <div class='col-sm-6'>
+    <div class='right'>
+      <div class="dark-blue-bg pad-5">
+        [wpv-filter-search-box]
+      </div>
+    </div>
+  </div>
+</div>
+[/wpv-filter-controls]
+[wpv-filter-end]
+
+
+
+
+
+
+
+
+
+  <div class="row">  
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class='dark-grey-bg pad-30'>
+      <h1 class="event-title no-marg">[wpv-post-title]</h1>
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>[types field="event-start-date" style="text" format="m/d/y - g:iA"][/types]</h3>
+        </div>
+        <div class="col-sm-8">
+          <div class="addthis_sharing_toolbox" data-url="[wpv-post-url]" data-title="[wpv-post-title]"></div>
+        </div>
+      </div>
+      <div class="row black-bg pad-15">
+        
+      <div class="col-sm-4 col-sm-push-8">
+          <div class="event-image img-lq img-lq-pad-100">
+          [wpv-post-featured-image size='medium']
+          [types field="event-img" alt="Event Image" title="Event Image" size="medium" align="none" resize="proportional" class="img-responsive"][/types]
+          </div>
+            <a class='btn-primary btn right width-full marg-15-v' href='[types field="event-ticket-url" output="raw"][/types]'>
+              <h1>
+                Get Tickets
+              </h1>
+            </a>
+        </div>
+        <div class="col-sm-8 col-sm-pull-4">
+          <p>[types field="event-desc"][/types]</p>
+          <div class="row tickets marg-15-v">
+            <div class="col-sm-3">
+              <span class="label label-default">Tickets:</span>
+            </div>
+            <div class="col-sm-9">
+              <a href='[types field="event-ticket-url"][/types]'>
+                <h3 class='no-marg'>
+                  $[types field="event-ticket-price"][/types]
+                </h3>
+              </a>
+            </div>
+          </div>
+        <div class="row location">
+          <div class="col-sm-3">
+            <span class="label label-default">Location:</span>
+          </div>
+          <div class="col-sm-9">
+            <p>
+            [types field="event-venue"][/types]<br />
+            [types field="event-venue-address"][/types]<br />
+            [types field="event-venue-address2"][/types]<br />
+            [types field="event-venue-city"][/types]<br />
+            [types field="event-venue-state"][/types]<br />
+            [types field="event-venue-zip"][/types]<br />
+            <span class='white bold'>
+                [types field="event-venue-url" title="Venue Website" target="_blank" class="venue-link"][/types]
+            </span>
+            </p>
+          </div>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>  
+
+<div class="side-bar-join">
+  <h2 class="text-center">
+    Become a Member of the Method Today
+  </h2>
+  <a class='btn-join'>
+    Join
+  </a>
+  <p class='mid-grey'>
+    What does membership get me? <i class='fa fa-angle-double-right'></i>
+  </p>
+</div>
